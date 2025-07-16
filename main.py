@@ -32,16 +32,16 @@ async def echo_handler(message: Message) -> None:
 
 
 async def main() -> None:
-    try:
-        # Initializing Bot with default properties
-        bot = Bot(token=BOT_TOKEN, defaultd=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    # Initializing Bot with default properties
+    bot = Bot(token=BOT_TOKEN, defaultd=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
-        # Running events dispatcher
-        await dp.start_polling(bot)
-    except KeyboardInterrupt:
-        logging.info("Bot stopped")
+    # Running events dispatcher
+    await dp.start_polling(bot)
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logging.info("Bot stopped")
