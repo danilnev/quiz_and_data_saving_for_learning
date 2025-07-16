@@ -32,11 +32,14 @@ async def echo_handler(message: Message) -> None:
 
 
 async def main() -> None:
-    # Initializing Bot with default properties
-    bot = Bot(token=BOT_TOKEN, defaultd=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    try:
+        # Initializing Bot with default properties
+        bot = Bot(token=BOT_TOKEN, defaultd=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
-    # Running events dispatcher
-    await dp.start_polling(bot)
+        # Running events dispatcher
+        await dp.start_polling(bot)
+    except KeyboardInterrupt:
+        logging.info("Bot stopped")
 
 
 if __name__ == "__main__":
