@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "John",
+        "age": 30,
+        "status": "is searching love"
+    },
+    {
+        "id": 2,
+        "name": "Mark",
+        "age": 19,
+        "status": "want to talking"
+    },
+    {
+        "id": 3,
+        "name": "Mary",
+        "age": 22,
+        "status": "is searching love"
+    }
+]
