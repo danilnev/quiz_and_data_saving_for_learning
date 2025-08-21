@@ -6,6 +6,7 @@ from config import BOT_TOKEN, DEBUG
 from app.handlers.echo_handler import router as echo_router
 from app.handlers.other_profiles_handler import router as other_profiles_router
 from app.handlers.profile_for_id_handler import router as profile_for_id_router
+from app.handlers.fill_the_profile_fsm_handlers import router as fill_the_profile_router
 
 from app.keyboards import main_keyboard, main_inline_keyboard
 
@@ -35,6 +36,7 @@ async def main() -> None:
     # dp.include_router(echo_router)
     dp.include_router(other_profiles_router)
     dp.include_router(profile_for_id_router)
+    dp.include_router(fill_the_profile_router)
 
     # Running events dispatcher
     await dp.start_polling(bot)

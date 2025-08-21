@@ -1,10 +1,13 @@
 from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 
-from ..keyboards import inline_profiles
+from app.keyboards import inline_profiles
+from app.middlewares import TestMiddleware
 
 
 router = Router()
+
+router.message.middleware(TestMiddleware())
 
 
 @router.message(F.text == "Анкеты других людей")

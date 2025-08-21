@@ -1,8 +1,12 @@
 from aiogram import Router
 from aiogram.types import Message 
 
+from app.middlewares import TestMiddleware
+
 
 router = Router()
+
+router.message.middleware(TestMiddleware())
 
 
 @router.message()

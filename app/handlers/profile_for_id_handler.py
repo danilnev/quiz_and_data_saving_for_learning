@@ -3,8 +3,12 @@ from aiogram.types import CallbackQuery
 
 from app.json_work import get_profiles
 from app.keyboards import profile_for_id_keyboard
+from app.middlewares import TestMiddleware
+
 
 router = Router()
+
+router.message.middleware(TestMiddleware())
 
 
 @router.callback_query(F.data.startswith("profile_"))
